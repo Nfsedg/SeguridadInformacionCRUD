@@ -8,9 +8,9 @@ namespace Domain.Entities
 {
     public class UsuarioResponse
     {
-        public string Nombre;
-        public string User;
-        public string Password;
-        public int FkRol;
+        public string Nombre { get; set; }
+        public string User { get; set; }
+        public string Password { get; set; }
+        public int FkRol { get; set; }
     }
 }

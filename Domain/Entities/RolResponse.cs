@@ -8,6 +8,6 @@ namespace Domain.Entities
 {
     public class RolResponse
     {
-        public string Nombre;
+        public string Nombre { get; set; }
     }
 }
