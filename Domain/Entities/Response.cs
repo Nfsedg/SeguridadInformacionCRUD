@@ -8,9 +8,9 @@ namespace Domain.Entities
 {
     public class Response<T>
     {
-        public Response(T data, string message = null)
+        public Response(T data, bool succeded = true, string message = null)
         {
-            Succeded = true;
+            Succeded = succeded;
             Message = message;
             Result = data;
         }
@@ -19,6 +19,7 @@ namespace Domain.Entities
         {
             Succeded = false;
             Message = message;
+            Result = default;
         }
 
         public bool Succeded { get; set; }
