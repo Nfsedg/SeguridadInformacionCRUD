@@ -1,4 +1,5 @@
 ﻿using Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WebApi29Av.Services.IServices;
 
@@ -18,6 +19,8 @@ namespace WebApi29Av.Controllers
         /// <summary>
         /// Obtiene todos los usuarios registrados.
         /// </summary>
+        /// 
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> GetUsers()
         {
@@ -29,6 +32,8 @@ namespace WebApi29Av.Controllers
         /// Obtiene un usuario por su ID.
         /// </summary>
         /// <param name="id">ID del usuario</param>
+        /// 
+        [Authorize]
         [HttpGet("{id:int}")]
         public async Task<IActionResult> GetUser(int id)
         {
@@ -39,6 +44,8 @@ namespace WebApi29Av.Controllers
         /// Crea un nuevo usuario.
         /// </summary>
         /// <param name="request">Datos del usuario</param>
+        /// 
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> PostUser([FromBody] UsuarioResponse request)
         {
@@ -49,6 +56,8 @@ namespace WebApi29Av.Controllers
         /// Elimina un usuario por su ID.
         /// </summary>
         /// <param name="id">ID del usuario</param>
+        /// 
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
@@ -66,6 +75,8 @@ namespace WebApi29Av.Controllers
         /// </summary>
         /// <param name="id">ID del usuario a actualizar</param>
         /// <param name="request">Datos actualizados</param>
+        /// 
+        [Authorize]
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, [FromBody] UsuarioResponse request)
         {
